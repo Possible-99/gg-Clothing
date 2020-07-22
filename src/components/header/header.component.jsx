@@ -36,15 +36,9 @@ const Header = ({ currentUser, hidden }) => (
   </HeaderContainer>
 );
 
-// This is how we give data to a component with redux. It returns a object with the data we need, and it give it to the component as a prop properties.
-// multiple destructuring
-// With createStructuredSelector,we dont need to pass the state in each property.
 const mapStateToProps = createStructuredSelector({
-  // state is from the rooter-reducer
-  // This is the property we are searching for header
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
 });
 
-// We use connect when we need properties from the reducers, it returns a Higher order component
 export default connect(mapStateToProps)(Header);
